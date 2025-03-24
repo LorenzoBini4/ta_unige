@@ -1,18 +1,28 @@
 \documentclass[12pt]{article}
 
-%\usepackage{a4wide}
+\usepackage{a4wide}
 \usepackage{epsfig}
+\usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{array}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[cache=false]{minted}
 \usepackage{multirow}
 \usepackage{hyperref}
+\usepackage{adjustbox}
+\usemintedstyle{vs}
+\usepackage{hyperref} % for links, metadata and bookmarks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,     % Colore dei link interni
+    urlcolor=blue        % Colore dei link esterni (come quello della homepage)
+}
 
 \title{[14X030] Introduction to Computational Finance}
-\author{Exercise series 1}
+\author{Exercise \#1}
 
-\date{\small February 28, 2023}
+\date{\small February 25, 2025}
 
 \begin{document} 
 
@@ -23,12 +33,10 @@
 \input{_deadline}
 \newpage
 
-\section*{First thing first}
-
-Fill the \href{https://moodle.unige.ch/mod/questionnaire/view.php?id=571682}{About you} form on Moodle. It takes 2 minutes and helps me understand your background. 
-
 \input{_exercice__computing_returns}
+\input{_exercice__continuously_compounded_return}
 \input{_exercice__portfolio}
 \input{_exercice__present_future_values}
 
 \end{document}
+

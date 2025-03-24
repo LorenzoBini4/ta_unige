@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{Introduction to Computational Finance}\\[16pt] \text{TP1 Solutions}\\ \text{University of Geneva}}
+\author{Lorenzo Bini}
+\date{February 2025}
+\maketitle
+
+\section{Solutions}
+
+\textbf{Exercise 1}:
+
+- \textbf{Question 1:} Monthly returns \( r_i \) are calculated using the formula:
+  \[ r_i = \frac{{P_i - P_{i-1}}}{{P_{i-1}}} \]
+  Where \( P_i \) is the price at time \( i \).
+  
+- \textbf{Question 2:} The annual return \( R_a \) is calculated using the formula:
+  \[ R_a = \prod_{i=1}^{12} (1 + r_i) - 1 \]
+  The sum of monthly returns is simply the sum of \( r_i \) over 12 months.
+
+- \textbf{Question 3:} The average monthly return \( R_m \) is calculated as the geometric mean of the monthly returns:
+  \[ R_m = \sqrt[12]{\prod_{i=1}^{12} (1 + r_i)} - 1 \]
+
+\textbf{Exercise 2}:
+
+- \textbf{Question 1:} The initial value \( V_0 \) of the portfolio is calculated by summing the products of stock prices and quantities:
+  \[ V_0 = \sum_{i=1}^{n} (p_{mi} \cdot q_{mi} + p_{si} \cdot q_{si}) \]
+
+- \textbf{Question 2:} The weight of each stock in the portfolio (\( \alpha_{mi} \) and \( \alpha_{si} \)) is calculated by dividing the product of stock price and quantity by the total portfolio value:
+  \[ \alpha_{mi} = \frac{{p_{mi} \cdot q_{mi}}}{{V_0}} \]
+  \[ \alpha_{si} = \frac{{p_{si} \cdot q_{si}}}{{V_0}} \]
+
+- \textbf{Question 3:} The one-period return of each stock (\( r_m \) and \( r_s \)) is calculated using the formula:
+  \[ r_m = \frac{{p_{m1} - p_{m0}}}{{p_{m0}}} \]
+  \[ r_s = \frac{{p_{s1} - p_{s0}}}{{p_{s0}}} \]
+
+- \textbf{Question 4:} The one-period return of the portfolio (\( r \)) is calculated as the weighted sum of individual stock returns:
+  \[ r = \alpha_{mi} \cdot r_m + \alpha_{si} \cdot r_s \]
+
+\textbf{Exercise 3}:
+
+- \textbf{Question 1:} The future value \( FV(n) \) of an investment after \( n \) periods is calculated using compound interest:
+  \[ FV(n) = V_0 \times \left(1 + \frac{R}{m}\right)^{nm} \]
+
+- \textbf{Question 2:} The initial value \( V_0 \) needed to achieve a certain future value after \( n \) periods is calculated using the present value formula:
+  \[ V_0 = \frac{{FV}}{{\left(1 + \frac{R}{m}\right)^{nm}}} \]
+
+- \textbf{Question 3:} The future value \( FV_{\infty} \) of an investment with continuous compounding is calculated using the formula:
+  \[ FV_{\infty}(n) = V_0 \times e^{R \cdot n} . \] 
+These formulae represent the core concepts of finance, including returns, portfolio management, and compound interest, which are essential for understanding financial markets and investment decisions.
+
+\end{document}

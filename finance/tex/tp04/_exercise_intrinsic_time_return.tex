@@ -1,0 +1,11 @@
+\section{Intrinsic Time Return}
+The purpose of this exercise is to investigate how measuring returns in \emph{intrinsic time} (i.e. using directional change events as time markers) changes the statistical properties of asset returns relative to the standard physical-time approach.
+\begin{enumerate}
+    \item Use the provided EUR/USD tick-by-tick dataset. Compute the mid-price as the average of bid and ask. 
+    \item Using $\delta=0.001$ for directional changes:
+    \begin{itemize}
+        \item Compute the returns between successive directional change events (intrinsic returns).
+        \item Compute the returns over fixed physical time intervals (e.g., daily returns) for comparison.    
+        \item Plot histograms of both sets of returns. Compare statistical properties (mean, standard deviation, skewness, kurtosis) of intrinsic versus physical-time returns, and discuss how the use of intrinsic time might provide different insights into market dynamics.
+    \end{itemize}
+\end{enumerate}

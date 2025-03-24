@@ -1,14 +1,11 @@
 \section{Time average}
-
 You can use the following snippet of Python code to generate a time series:
-
 \begin{minted}{python}
 import numpy as np
 np.random.seed(1)
 n = 1000
 ts = 100 + np.cumsum(np.random.uniform(-1, 1, n))
 \end{minted}
-
 \begin{enumerate}
     \item Code your own implementation of:
         \begin{itemize}
@@ -29,6 +26,3 @@ ts = 100 + np.cumsum(np.random.uniform(-1, 1, n))
         \end{itemize}
         What do you observe when $\alpha$ varies?
 \end{enumerate}
-
-  
-

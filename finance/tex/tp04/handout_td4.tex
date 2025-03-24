@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-
+\usepackage{fix-cm}
 \usepackage{a4wide}
 \usepackage{epsfig}
 \usepackage{amssymb}
@@ -9,25 +9,34 @@
 \usepackage[T1]{fontenc}
 \usepackage[cache=false]{minted}
 \usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{adjustbox}
+\usemintedstyle{vs}
+\usepackage{hyperref} % for links, metadata and bookmarks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,     % Colore dei link interni
+    urlcolor=blue        % Colore dei link esterni (come quello della homepage)
+}
 
 \usemintedstyle{vs}
 
 \title{[14X030] Introduction to Computational Finance}
-\author{Exercise series 4}
+\author{Exercise \#4}
 
-\date{\small March 21, 2023}
+\date{\small March 18, 2025}
 
 \begin{document} 
-
 \maketitle 
 
 %\vfill
-\input{../common/_instructions}
+\input{_instructions}
 \input{_deadline}
 \newpage
 
 \input{_exercise__time_average}
 \input{_exercise__scaling_law}
+\input{_exercise_intrinsic_time_return}
+\input{_exercise_strategy_simulation}
 
 \end{document}
-

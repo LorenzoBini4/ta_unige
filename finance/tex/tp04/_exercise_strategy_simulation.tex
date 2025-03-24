@@ -1,0 +1,9 @@
+\section{Crossover Strategy Simulation}
+In this exercise, you will have to design and backtest a simple moving average crossover trading strategy using real EUR/USD data. The strategy uses two moving averages, a fast and a slow one, to generate buy and sell signals.
+\begin{enumerate}
+    \item Compute two exponential moving averages (EMA): a fast one with a short window (e.g., $\alpha_f=2/(N_f+1)$ with $N_f=20$) and a slow one with a longer window (e.g., $\alpha_s=2/(N_s+1)$ with $N_s=2000$).
+    \item Define a \emph{buy signal} when the fast EMA crosses above the slow EMA and a \emph{sell signal} when it crosses below.
+    \item Simulate trading over the available data. For simplicity, assume you buy one unit on a buy signal and sell (or short) one unit on a sell signal.
+    \item Plot the mid-price with the fast and slow EMAs, and indicate the buy/sell points.
+    \item Discuss the strategy's effectiveness and potential limitations/improvements, for example try resampling the data (e.g., to 5-minute intervals) to reduce the number of signals: would it smooth out some of the noise? What do you observe?
+\end{enumerate}

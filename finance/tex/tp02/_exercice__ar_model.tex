@@ -26,7 +26,7 @@ days = [datetime.fromtimestamp(x).strftime('%b %d') for x in data[:, 0]]
     \item Preprocessing of the time series.
     \begin{enumerate}
         \item Plot the time series. Does it look stationary?
-        \item Compute the corresponding daily returns and plot this new time series. Does it look stationary? For the rest of the exercise, substract the mean of this series to center it. 
+        \item Compute the corresponding daily returns and plot this new time series. Does it look stationary? From now on substract the mean of this series to center it around zero.
     \end{enumerate}
     \item Analysis of the time series of daily returns.
     \begin{enumerate}
@@ -43,6 +43,7 @@ from statsmodels.tsa.ar_model import AutoReg
 predictions = AutoReg(your_time_series, lags=p).fit().predict()
 \end{minted}
         
+            
             Plot the AR(1) predictions computed with this library and compare it to the predictions of your model obtained in \ref{own_pred} (hint: it should be really similar). 
 
         \item Using this library, plot the predictions for higher-order AR models. Does the quality of the predictions improves?

@@ -1,0 +1,121 @@
+\documentclass[handout]{beamer}
+
+\usepackage{ulem}
+\usepackage{hyperref}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{biblatex}
+
+% Packages:
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage{amsmath} % for math
+\usepackage[]{hyperref} % for links, metadata and bookmarks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=green,     % Colore dei link interni
+    urlcolor=lightgreen        % Colore dei link esterni (come quello della homepage)
+}
+% custom light yellow color
+\definecolor{lightyellow}{RGB}{255, 255, 150} 
+\definecolor{lightblue}{RGB}{173, 216, 230}
+\definecolor{lightred}{RGB}{255, 182, 193} 
+\definecolor{lightgreen}{RGB}{144, 238, 144}
+
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+\usepackage{fancyhdr} % For custom headers and footers
+\usepackage{lastpage} % To get the total number of pages
+
+\title{Introduction to Computational Finance}
+\subtitle{Presentation of Exercise Sessions}
+\author{Lorenzo Bini}
+\institute{University of Geneva}
+\date{February 25, 2025}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+    More about me: \pause
+    \begin{itemize}
+        \item Bachelor: Alma Mater Studiorum - University of Bologna (oldest university in Europe, 1088, bachelor in Physics). \pause
+        \item Then Master at Polytechnic of Turin, Physics of Complex Systems. \pause
+        \item Since then, research in machine learnings: \pause
+        \begin{itemize}
+            \item Graph Neural Networks (GNNs) for detecting MRD of Acute Lymphoblastic and Myeloid Leukemia cells classification (FCS data from HUG). \pause
+            \item Self-Supervised Learning on Graphs (GCL), Geometric Deep Learning, Generative AI  (e.g., DDPMs) for 3D genomics and LLMs for medical applications (more \href{https://lorenzobini4.github.io/}{here}). \pause
+            \item PhD in graph machine learning with Prof. Stéphane Marchand-Maillet (almost 2 year and a half now). \pause
+        \end{itemize}
+    \end{itemize}
+    \vspace{1cm}
+    Quick remarks: \pause
+    \begin{itemize}
+        \item I'm discovering Finance with you! \pause
+        \item I mainly code in Python/Julia.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    Instructions: \pause
+    \begin{itemize}
+    \item Submit a \textbf{zip} file containing your report in \textbf{pdf} format and your code. \pause
+    \item \textbf{Deadline}: Every Monday night at 11:59 PM. \pause
+    \item Report: \pause
+    \begin{itemize}
+    \item Answers to the TPs questions. Figures and numerical results are necessary but not sufficient: provide your analysis/comments as well. \pause
+    \item Example: if your results surprise you, explain why and explain what the expected result was. \pause
+    \item Pay attention to the presentation: axis labels, legend, etc. \pause
+    \end{itemize}
+    \item Code: \pause
+    \begin{itemize}
+        \item Implementation questions + code used to produce the results and figures in the report. \pause
+        \item Programming language of your choice. \pause
+        \item I recommend Python/Julia: I won't be able to assist you in the same way if you use a different language.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+Session organization: \pause
+\vspace{1cm}
+\begin{enumerate}
+\item Answers to your questions from the previous session. \pause
+\item Comments on the TPs I've just corrected. \pause
+\item Presentation of current TP.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+Questions during the week: \pause
+\vspace{1cm}
+\begin{itemize}
+\item By \textbf{email} (\href{mailto:Lorenzo.Bini@unige.ch}{Lorenzo.Bini@unige.ch}) rather than via Zoom or we can arrange an appointment at my office (Bureau \#221). \pause
+\item Any question is good, don't hesitate to contribute to the answer if you think you can help.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\textbf{Important reminders}: \pause
+\vspace{1cm}
+\begin{itemize}
+\item TPs will be graded on binary scale \textit{passed or not}, where you must complete (graded as \textit{passed}) \textbf{8 TPs out of 13} to be eligible for the final oral exam. \pause
+\item Fill out the "What about you" form on Moodle (just couple of minutes, to better know your background and knowledge).
+\end{itemize}
+\end{frame}
+
+
+
+\end{document}

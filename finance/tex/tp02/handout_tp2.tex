@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
-
-%\usepackage{a4wide}
+\usepackage{fix-cm}
+\usepackage{a4wide}
 \usepackage{epsfig}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -9,13 +9,20 @@
 \usepackage[T1]{fontenc}
 \usepackage[cache=false]{minted}
 \usepackage{multirow}
-
+\usepackage{hyperref}
+\usepackage{adjustbox}
 \usemintedstyle{vs}
+\usepackage{hyperref} % for links, metadata and bookmarks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,     % Colore dei link interni
+    urlcolor=blue        % Colore dei link esterni (come quello della homepage)
+}
 
 \title{[14X030] Introduction to Computational Finance}
-\author{Exercise series 2}
+\author{Exercise \#2}
 
-\date{\small March 5, 2024}
+\date{\small March 4, 2025}
 
 \begin{document} 
 
