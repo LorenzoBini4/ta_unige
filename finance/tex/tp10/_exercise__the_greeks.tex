@@ -1,0 +1,38 @@
+\section*{The Greeks}
+
+Let an asset $S$ with inital value $S_0$ at $t=0$. We consider both an european option to buy this asset (call) and to sell it (put), both with maturity $T = 1$ (in years) and strike price $K = 120$. We assume a constant volatility $\sigma=20\%$ over their lifespan, and a risk-free rate $r=5\%$. 
+
+\subsection*{Plotting the greeks}
+
+
+\paragraph{} Using the Black-Scholes formula to valuate the call and the put price:
+As a function of the initial asset price $S_0$, plot the evolution of:
+\begin{itemize}
+    \item the price of the call / put
+    \item the $\Delta$ of the call / put
+    \item the $\Gamma$ of the call / put
+\end{itemize}
+
+\noindent Comment on the meaning of these graphs.
+
+
+\subsection*{Hedging a short call}
+
+Suppose that the asset price is $S_0 = 100$, and we sell $1000$ calls. 
+
+\begin{itemize}
+    \item Which position should we have to be $\Delta$-neutral?
+    \item What is the profit of this strategy supposing that $S_{0+\epsilon} = 105$? $S_{0+\epsilon} = 95$? 
+    \item In the two previous cases, compare the quality of this hedging strategy with having a fully naked (no position) or a fully covered option (buying a quantity 1000 of the underlying asset).
+\end{itemize}
+
+
+\subsection*{Hedging a short put}
+
+Suppose that the asset price is $S_0 = 100$, and we sell $1000$ puts. 
+
+\begin{itemize}
+    \item Which position should we have to be $\Delta$-neutral?
+    \item What is the profit of this strategy supposing that $S_{0+\epsilon} = 105$? $S_{0+\epsilon} = 95$? 
+    \item In the two previous cases, compare the quality of this hedging strategy with having a fully naked or a fully covered option.
+\end{itemize}

@@ -1,0 +1,34 @@
+\section{Time average}
+
+You can use the following snippet of Python code to generate a time series:
+
+\begin{minted}{python}
+import numpy as np
+np.random.seed(1)
+n = 1000
+ts = 100 + np.cumsum(np.random.uniform(-1, 1, n))
+\end{minted}
+
+\begin{enumerate}
+    \item Code your own implementation of:
+        \begin{itemize}
+            \item A simple moving average (SMA)
+            \item An exponential moving average (EMA)
+        \end{itemize}
+        Make sure that $\mathrm{SMA}(ts, N=1) = \mathrm{EMA}(ts, \alpha=1) = ts$.
+    \item For the following, you can use a library if you did not succeed to implement your own moving averages. On the same graph, plot the nine following curves:
+        \begin{itemize}
+            \item The original time series $ts$ 
+            \item $\{ \mathrm{SMA}(ts, N), \mathrm{EMA}(ts, \alpha=\frac{2}{N+1}), \forall N \in \{10, 50, 100, 200\} \} $
+        \end{itemize}
+    What can you say of SMA vs EMA? How does the fit and the lag relate to $N$?  
+    \item On the same graph, plot the four following curves:
+        \begin{itemize}
+            \item The original time series $ts$ 
+            \item $\{ \mathrm{EMA}(ts, \alpha), \forall \alpha \in \{0.01, 0.1, 0.5 \} \} $
+        \end{itemize}
+        What do you observe when $\alpha$ varies?
+\end{enumerate}
+
+  
+

@@ -1,0 +1,22 @@
+\section*{Limit Order Book - Maslov model}
+
+The goal of this series is to implement Maslov model (\href{https://arxiv.org/pdf/cond-mat/9910502.pdf}{check the paper for more details}), which allows to reproduce interesting stylized facts while being relatively simple. \\
+
+\noindent We consider the following version of the model:
+
+\begin{itemize}
+    \item One trader at each time step.
+    \item Buyer or seller, with probability $1 - q$ and $q$.
+    \item Issues a market order (buy at ask / sell at bid) with probability $1 - r$ or a limit order with probability $r$. The price for the limit order is defined as $p - K$ when buying and $p + K$ when selling, with $p$ the market price, defined as the last price said in the market. K is a positive random variable.
+    \item Each trader buys or sells a quantity of one.
+    \item An order cannot be canceled.
+    \item If an order cannot be executed (e.g. a sell market order but there is no buy order in the LOB), then nothing happens at this time step.
+\end{itemize}
+
+\begin{enumerate}
+    \item Implement the procedure above and unroll it for 1000 iterations. Use $q = r = 0.5$ and $K = 1$ with probability 1. Plot the time series of the market, ask, bid and mid prices $p(t), a(t), b(t)$ and $ m(t) = \frac{b(t) + a(t)}{2}$. Are there any difference between the mid and the market prices? 
+    \item Plot the time series of returns of the market price, what do you observe?
+    \item Plot the histogram of the values of this series. What can you say of this distribution? Is it a normal distribution?
+    \item Plot and comment the ACF graph of this series. 
+    \item Optional: change the parameters of the model to understand how they influence the market.
+\end{enumerate}

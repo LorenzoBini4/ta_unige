@@ -1,0 +1,10 @@
+\section*{Option pricing: Black-Scholes versus Binomial Tree}
+
+Let an asset $S$ be valuated at $t=0$ at $S_0=100$. We consider an european option to buy this asset (call) with maturity $T = 1$ (in years) and strike price $K = 120$. The goal of this exercise is to compare two methods to price this option, Black-Scholes and Binomial Tree. We assume a constant volatility $\sigma=20\%$ over the lifespan of the call, and a risk-free rate $r=5\%$. 
+
+\begin{enumerate}
+    \item Implement the Black-Scholes formula to determine the value of this call at $t=0$.
+    \item Implement a binomial tree to determine the initial value of the call. Your implementation should take the depth of the tree as an argument.
+    \item On the same graph, plot the evolution of the estimated value of the call option as a function of the binomial tree depth, as well as the value derived with Black-Scholes. What do you observe? How deep should be the tree in order to get a reasonable approximation of the Black-Scholes value?
+\end{enumerate}
+

@@ -1,0 +1,30 @@
+\section*{Minority Game}
+
+\begin{itemize}
+    \item Let $N$ be the number of agents, $M$ the number of bits of history and $S$ the number of strategies available to each agent among the $2^{2^M}$ possible strategies. 
+    \item Each agent initializes the utilities of its strategies to zero.
+    \item Initialize the history $\mu(0)$ to a random list of $M$ bits.
+    \item For $t$ in $1, ..., T$:
+    \begin{itemize}
+        \item Each agent $i \in \{1,\dots,N\}$ samples a strategy $s_i(t)$ according to the softmax distribution of utilities: $\frac{\exp(\Gamma_i u_s(t))}{\sum_{s'}\exp(\Gamma_i u_{s'}(t))}$ where $\Gamma_i > 0$.
+        \item Given the current history $\mu(t)$, each agent uses its chosen strategy $s_i(t)$ to pick an action $a_i(t) \in \{+1, -1\}$.
+        \item Compute the attendance $A(t) = \sum\limits_{i=1}^N a_i(t)$.
+        \item Update the utility of the chosen strategies with a linear payoff: \[u_{s_i(t)} = u_{s_i(t-1)} - a_i(t) \frac{A(t)}{\beta}\]
+        \item Remove the oldest bit of history and add a new one.
+    \end{itemize}
+\end{itemize}
+
+\begin{enumerate}
+    \item 
+        \begin{enumerate}
+            \item Why is the above procedure called a minority game?
+            \item What is the role of $\Gamma_i$? In particular, what does a large or a small value of $\Gamma_i$ means? 
+        \end{enumerate}
+    \item Implement a minority game. You can use $\beta = 1$ and $\Gamma_i = 0.01, \forall i \in \{1,...,N\}$. To add a new bit of history, you can either pick it at random or from some function of the attendance (1 if positive attendance, 0 if negative attendance for instance).
+    \item Simulate a minority game with $S = 2$ strategies for $T = 100$ steps for values of $N$ in $\{51, 101, 251, 501, 1001\}$ and values of $M$ in $\{0, 1, ..., 18\}$. On a log-log plot, represent $\frac{\sigma^2}{N}$, the scaled variance of the attendance, against $\alpha = \frac{2^M}{N}$.
+    \item What is the critical value $\alpha_c$ for which the volatility reaches a minimum?
+    \item Optional: Define an initial price $p(0)$ (for instance 100) and then update it as follows: $p(t) = p(t - 1)\exp(\frac{A(t)}{\lambda})$ with $\lambda$ some positive constant. What is the intuition behind this update rule? Plot price curves for different values of $\alpha$ and $\lambda$ and comment.
+\end{enumerate}
+
+
+

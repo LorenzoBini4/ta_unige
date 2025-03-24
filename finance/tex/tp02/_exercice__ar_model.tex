@@ -1,0 +1,50 @@
+\section{AR model on an empirical time series}
+
+The file \texttt{eur\_usd.txt} (download it from Moodle) contains the daily EUR\_USD price evolution with the following data structure:
+\begin{verbatim}
+timestamp price
+\end{verbatim}
+
+\noindent where \texttt{timestamp} denotes the time (in seconds) measured starting from \texttt{01 Jan 1970 00:00:00.000}.
+
+\noindent You can use the following snippet of Python code to load the data: 
+
+\begin{minted}{python}
+from datetime import datetime
+import numpy as np
+
+data = np.loadtxt('eur_usd.txt')
+price_ts = data[:, 1]
+
+# Tip: You can convert the timestamp to a better format:
+days = [datetime.fromtimestamp(x).strftime('%b %d') for x in data[:, 0]]
+\end{minted}
+
+
+
+\begin{enumerate}
+    \item Preprocessing of the time series.
+    \begin{enumerate}
+        \item Plot the time series. Does it look stationary?
+        \item Compute the corresponding daily returns and plot this new time series. Does it look stationary? For the rest of the exercise, substract the mean of this series to center it. 
+    \end{enumerate}
+    \item Analysis of the time series of daily returns.
+    \begin{enumerate}
+        \item Compute and plot the ACF for lags 0 to 10. 
+        \item Using the analytical expressions seen during the course, compute the parameter $\phi_1$ of the AR(1) model for this time series.
+        \item\label{own_pred} Use your model to do predictions from the initial value. Plot the predictions along the time series of daily returns on the same graph. What do you think of these predictions?
+    \end{enumerate}
+    \item AR(p) model with a library.
+    \begin{enumerate}
+        \item In Python, you can use the \texttt{statsmodels} library to fit an AR(p) model on a time series. 
+
+\begin{minted}{python}
+from statsmodels.tsa.ar_model import AutoReg
+predictions = AutoReg(your_time_series, lags=p).fit().predict()
+\end{minted}
+        
+            Plot the AR(1) predictions computed with this library and compare it to the predictions of your model obtained in \ref{own_pred} (hint: it should be really similar). 
+
+        \item Using this library, plot the predictions for higher-order AR models. Does the quality of the predictions improves?
+    \end{enumerate}
+\end{enumerate}
