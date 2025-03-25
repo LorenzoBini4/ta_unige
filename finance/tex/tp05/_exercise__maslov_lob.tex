@@ -1,5 +1,4 @@
 \section*{Limit Order Book - Maslov model}
-
 The goal of this series is to implement Maslov model (\href{https://arxiv.org/pdf/cond-mat/9910502.pdf}{check the paper for more details}), which allows to reproduce interesting stylized facts while being relatively simple. \\
 
 \noindent We consider the following version of the model:
@@ -18,5 +17,30 @@ The goal of this series is to implement Maslov model (\href{https://arxiv.org/pd
     \item Plot the time series of returns of the market price, what do you observe?
     \item Plot the histogram of the values of this series. What can you say of this distribution? Is it a normal distribution?
     \item Plot and comment the ACF graph of this series. 
-    \item Change the parameters of the model and try to explain how they influence the market.
+     \item Compute the bid–ask spread $s(t)=a(t)-b(t)$ and plot its time series.
+    \item Plot a histogram of the spread values. Comment on whether the distribution is fat-tailed.
+    \item For selected time points, analyze the order book depth: for a range of price levels relative to the best bid/ask, compute the aggregated number of orders.
+    \item Plot the depth distribution and discuss its shape in relation to empirical observations.
+    \item Change the parameters of the model to understand how they influence the market and comment about this point.
 \end{enumerate}
+
+\section*{Heterogeneous Order Sizes and Trader Behavior on LOB Dynamics}
+Finally, you will extend the basic Maslov model to include heterogeneity in order sizes and trader behavior. You will investigate how these extensions influence the market price dynamics, volatility, and autocorrelation structure of returns.
+
+We now consider the following version of the model:
+\begin{itemize}
+    \item Instead of assuming every order has unit size, assume that order sizes are drawn from a distribution (for example, a discrete uniform distribution between 1 and 5).
+    \item Introduce two types of traders:
+        \begin{itemize}
+            \item \textbf{Aggressive Traders:} With a higher probability (e.g., 0.8) they submit market orders.
+            \item \textbf{Passive Traders:} With a higher probability (e.g., 0.8) they submit limit orders.
+        \end{itemize}
+        \item Let each trader, at each time step, be randomly classified as aggressive or passive.
+    \end{itemize}
+    \begin{enumerate}
+        \item Run the simulation for 1000 iterations with the extended model.
+        \item Record the time series of the market price and compute the returns.
+        \item Plot the histogram of returns and calculate basic statistics (mean, variance).
+        \item Compute and plot the autocorrelation function (ACF) of the return series.
+        \item Discuss how the introduction of heterogeneous order sizes and trader behavior affects the price dynamics compared to the baseline model. Comment on any observed changes in volatility clustering or the fat-tailed nature of the return distribution.
+    \end{enumerate}

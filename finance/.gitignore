@@ -1,5 +1,6 @@
 *.aux
 *.log
+*.html
 *.pdf
 *.xdv
 *.out
