@@ -1,8 +1,26 @@
 \section{Algorithm based on price evolution}
-
-Finally, implement an execution algorithm that takes into account the price evolution. For instance, you can split the order in 12 equal slices and trade a slice at each downward directional change $\delta$. 
-
+Finally, implement an execution algorithm that takes into account the price evolution. For instance, you can split the order into 12 equal slices and trade a slice at each downward directional change $\delta$. 
 \begin{itemize}
     \item Picking again the same initial times, compute the execution prices you got with this method and compare them with the ones previously obtained. 
-    \item How should you choose $\delta$ in order to execute the full order over 3 hours?
+    \item How should you choose $\delta$ to execute the full order over 3 hours?
 \end{itemize}
+
+\section{Impact of Market Volatility}
+In this task, you will analyze how market volatility affects the execution prices obtained using different execution strategies (TWAP, VWAP, and the price-evolution-based method). 
+\begin{enumerate}
+    \item \textbf{Compute Market Volatility:} 
+    \begin{itemize}
+        \item Define volatility as the standard deviation of mid-price returns over a rolling window of 30 minutes.
+        \item Compute this measure for the selected 20 time intervals.
+    \end{itemize}
+    \item \textbf{Analyze Execution Performance Under Different Volatility Conditions:}
+    \begin{itemize}
+        \item Divide the 20 intervals into two groups:
+        \begin{itemize}
+            \item \textbf{Low-volatility periods:} Where the rolling standard deviation is in the bottom 50\% of the dataset.
+            \item \textbf{High-volatility periods:} Where the rolling standard deviation is in the top 50\%.
+        \end{itemize}
+        \item Compute and compare the execution prices obtained using TWAP, VWAP, and price-evolution strategies across both groups. Which strategy performs best in volatile markets?
+        \item Is there a strategy that minimizes execution price deviation across all market conditions?
+    \end{itemize}
+\end{enumerate}
