@@ -1,5 +1,4 @@
 \section*{Optimal portfolios}
-
 In this series we look at the closing prices of Macdonald's, Bank of America, IBM, Chevron, Coca-Cola, Novartis and AT\&T, over a one-year time span extending from 2013-05-01 to 2014-05-01. \\
 
 \noindent Download the file \texttt{closing\_prices.csv} on Moodle. You can load it with the following Python code:
@@ -17,22 +16,16 @@ data = df.to_numpy() # if you prefer working with np array
     \item We introduced the following analytical expression during the course to compute the weight vector that minimizes the risk given a desired portfolio return $\mu_p$:
         \begin{equation}
         \begin{aligned}
-            a &= \mathbbm{1}^T C^{-1} \mathbbm{1} \\
-            b &= \mathbbm{1}^T C^{-1} \mu  \\
+            a &= \mathbf{1}^T C^{-1} \mathbf{1} \\
+            b &= \mathbf{1}^T C^{-1} \mu  \\
             c &= \mu^T C^{-1} \mu  \\
             d &= ac - b^2 \\
             \lambda_1 &= \frac{c - b \mu_p}{d} \\
             \lambda_2 &= \frac{a \mu_p - b}{d} \\
-            w &= C^{-1} (\lambda_1 \mathbbm{1} + \lambda_2 \mu)  \\
+            w &= C^{-1} (\lambda_1 \mathbf{1} + \lambda_2 \mu)  \\
         \end{aligned}
         \end{equation}
     With $\mu = \{\mu_1, ..., \mu_7\}$ the expected returns of each stock and $C$ the covariance matrix of returns.\\ 
-    
         \noindent Using this expression, draw Markowitz's efficient frontier for portfolio return $\mu_p \in [-0.0006, +0.0004]$.
-
-
     \item Using the efficient frontier, find the weight of the portfolio with the minimal volatility. What can you say about the return of this portfolio?
 \end{enumerate}
-
-
-
