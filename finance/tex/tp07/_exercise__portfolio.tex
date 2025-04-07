@@ -1,4 +1,4 @@
-\section*{Optimal portfolios}
+\section*{Optimal Portfolio}
 In this series we look at the closing prices of Macdonald's, Bank of America, IBM, Chevron, Coca-Cola, Novartis and AT\&T, over a one-year time span extending from 2013-05-01 to 2014-05-01. \\
 
 \noindent Download the file \texttt{closing\_prices.csv} on Moodle. You can load it with the following Python code:
@@ -13,7 +13,7 @@ data = df.to_numpy() # if you prefer working with np array
 
 \begin{enumerate}
     \item Write a function that estimates the expected return and the risk (standard deviation of returns) for a given weight vector. Then, plot the return against the risk for 100000 randomly chosen weights vectors (Monte-Carlo simulation). What do you observe?
-    \item We introduced the following analytical expression during the course to compute the weight vector that minimizes the risk given a desired portfolio return $\mu_p$:
+    \item We introduced the following analytical expressions during the course to compute the weight vector that minimizes the risk given a desired portfolio return $\mu_p$:
         \begin{equation}
         \begin{aligned}
             a &= \mathbf{1}^T C^{-1} \mathbf{1} \\
@@ -29,3 +29,26 @@ data = df.to_numpy() # if you prefer working with np array
         \noindent Using this expression, draw Markowitz's efficient frontier for portfolio return $\mu_p \in [-0.0006, +0.0004]$.
     \item Using the efficient frontier, find the weight of the portfolio with the minimal volatility. What can you say about the return of this portfolio?
 \end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section*{Optimal Portfolio under No-Short Selling Constraints}
+At this point, you will extend the optimal portfolio analysis by imposing a no-short selling constraint (i.e. all portfolio weights must be non-negative).
+You will compute the efficient frontier under this additional constraint and compare it to the unconstrained (Markowitz) efficient frontier.
+
+\noindent Keep using the provided \texttt{closing\_prices.csv} file which contains the closing prices of Mcdonald's, Bank of America, IBM, Chevron, Coca-Cola, Novartis, and AT\&T over one year (from 2013-05-01 to 2014-05-01). Load the data and compute the daily returns for each stock.
+
+\begin{enumerate}
+        \item Formulate the portfolio optimization as a minimization problem where the objective is to minimize the portfolio variance subject to the following constraints:
+        \begin{itemize}
+            \item The portfolio return is equal to a given target $\mu_p$.
+            \item The sum of weights is equal to 1.
+            \item All weights are non-negative (no short selling).
+        \end{itemize}
+        \item Use a suitable Python optimization library (e.g., \texttt{cvxpy}) to solve the constrained problem.
+        \item Plot the constrained efficient frontier over the same range of previous $\mu_p$.
+        \item Compare the unconstrained (computed from Exercise \# 1) and constrained efficient frontiers.
+        \item Discuss the impact of the no-short selling constraint on the risk-return trade-off.
+        \item Identify and report the portfolio with minimal risk under the no-short selling constraint and comment on its expected return.
+\end{enumerate}
+\textbf{Note:} You can use the \texttt{cvxpy} library to solve the constrained optimization problem. The library allows you to define the optimization variables, objective function, and constraints in a straightforward manner. Make sure to install it if you haven't already by \texttt{pip install cvxpy}.
