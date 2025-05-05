@@ -10,15 +10,8 @@
 #SBATCH --time 0-00:14:59                  # maximum run time.
 # module load my sosftware               # load a specific software using module, for example Python
 
-
-## USATO Python 3.8.18
 module load Anaconda3
 eval "$(conda shell.bash hook)"
 conda activate test_gpu
 ###################################
-
 python -u code/tp01/main.py
-
-
-
-# sbatch --gpus=ampere:1
