@@ -1,10 +1,52 @@
 \section*{Option pricing: Black-Scholes versus Binomial Tree}
-
 Let an asset $S$ be valuated at $t=0$ at $S_0=100$. We consider an european option to buy this asset (call) with maturity $T = 1$ (in years) and strike price $K = 120$. The goal of this exercise is to compare two methods to price this option, Black-Scholes and Binomial Tree. We assume a constant volatility $\sigma=20\%$ over the lifespan of the call, and a risk-free rate $r=5\%$. 
-
 \begin{enumerate}
     \item Implement the Black-Scholes formula to determine the value of this call at $t=0$.
     \item Implement a binomial tree to determine the initial value of the call. Your implementation should take the depth of the tree as an argument.
     \item On the same graph, plot the evolution of the estimated value of the call option as a function of the binomial tree depth, as well as the value derived with Black-Scholes. What do you observe? How deep should be the tree in order to get a reasonable approximation of the Black-Scholes value?
 \end{enumerate}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Implied Volatility from Binomial Prices}
+Using your binomial‐tree pricer, compute the implied Black–Scholes volatility for different strikes and tree depths. Plot the resulting volatility ``smile'' and discuss convergence as the tree deepens.
+
+\begin{enumerate}
+  \item \textbf{Strikes \& Tree Depths:}  
+    \begin{itemize}
+      \item Fix \(S_0=100\), \(T=1\), \(r=0.05\).  
+      \item Consider strikes \(K\in\{80,90,100,110,120\}\).  
+      \item Use three binomial‐tree depths: \(N\in\{20,100,500\}\).
+    \end{itemize}
+
+  \item \textbf{Compute Tree Prices:}  
+    For each \((K,N)\), compute the call price  
+    \[
+      C_{\text{tree}}
+      \;=\;\text{binomial\_call}(S_0,K,T,r,\sigma_{\text{true}},N),
+      \quad \sigma_{\text{true}}=0.20.
+    \]
+
+  \item \textbf{Implied Volatility via Bisection Method:}  
+    \begin{itemize}
+      \item Implement the Black–Scholes call price
+      \[
+        C_{\mathrm{BS}}(S_0,K,T,r,\sigma)
+        = S_0\,N(d_1) - K e^{-rT} N(d_2),
+      \]
+      with
+      \(\displaystyle d_{1,2} = \frac{\ln(S_0/K)+(r\pm\tfrac12\sigma^2)T}{\sigma\sqrt{T}}\).
+      \item For each tree price \(C_{\text{tree}}\), solve for \(\sigma_{\text{imp}}\) satisfying
+      \[
+        C_{\mathrm{BS}}(S_0,K,T,r,\sigma_{\text{imp}})
+        = C_{\text{tree}}
+      \]
+      by using a bisection \footnote{Instead of coding the bisection loop yourself, you can use Python’s \texttt{scipy.optimize.bisect}. Define \(f(\sigma)=C_{\mathrm{BS}}(S_0,K,T,r,\sigma)-C_{\text{tree}}\). Call \texttt{bisect(f, 1e-4, 2.0, xtol=1e-6)} to find \(\sigma_{\text{imp}}\). This will be more concise and handles convergence for you.} over \(\sigma\in[10^{-4},2.0]\) with tolerance \(10^{-6}\).
+    \end{itemize}
+
+  \item \textbf{Volatility Smile Plot:}  
+    \begin{itemize}
+      \item On one chart, plot \(\sigma_{\text{imp}}(K)\) vs.\ \(K\) for each tree depth \(N\), then add an horizontal line at \(\sigma_{\text{true}}=0.20\) as well.  
+      \item Comment on how the smile flattens as \(N\) increases.
+    \end{itemize}
+\end{enumerate}
